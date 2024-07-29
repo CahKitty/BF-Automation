@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "cypress": "^13.13.1"
+  },
+  "name": "cypress_bfree-automation",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

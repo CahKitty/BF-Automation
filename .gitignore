@@ -1,0 +1,5 @@
+Git Ignore
+.DS_Store
+node_module/
+screenshot/
+node_modules
