@@ -2,10 +2,10 @@ describe('template spec', () => {
   it('Erro ao Fazer Login', () => {
     cy.visit('/')
     cy.Login()
-    //cy.contains('E-mail ou senha inválidos').should('be.visible')
+    cy.contains('Não encontramos um cadastro com este endereço de e-mail').should('be.visible')
   })
   it('Sucesso ao Fazer Login', () => {
     cy.visit('/')
     cy.Login()
   })
-})
+});
