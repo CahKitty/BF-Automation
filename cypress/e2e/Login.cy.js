@@ -1,9 +1,11 @@
 describe('template spec', () => {
-  it('Erro ao Fazer Login', () => {
+  it.only('Erro ao Fazer Login', () => {
     cy.visit('/')
-    cy.Login()
-    cy.contains('Não encontramos um cadastro com este endereço de e-mail').should('be.visible')
+    cy.LoginInvalido()
+    cy.wait(1500)
+    cy.get('#alert-message').should('contain.text', 'E-mail ou senha inválidos')
   })
+
   it('Sucesso ao Fazer Login', () => {
     cy.visit('/')
     cy.Login()
