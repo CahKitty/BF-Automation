@@ -3,3 +3,5 @@ Git Ignore
 node_module/
 screenshot/
 node_modules
+fixtures
+downloads
