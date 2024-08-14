@@ -7,4 +7,8 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://bfree.eduzz.com/bfree-stage/'
   },
+  retries:{
+    runMode: 2,
+    openMode: 1
+  }
 });

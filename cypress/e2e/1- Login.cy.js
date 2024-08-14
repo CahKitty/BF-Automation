@@ -1,17 +1,18 @@
-describe('template spec', () => {
+describe('Login', () => {
 
-  it.only('Sucesso ao Fazer Login', () => {
+  it('Sucesso ao Fazer Login', () => {
     cy.visit('/')
-    cy.Login('qa-next@eduzz.com','QANext123456!')
+    cy.Login(Cypress.env('USER_EMAIL'), Cypress.env('USER_PASSWORD'))
   })
 
   it('Erro ao Fazer Login', () => {
+    cy.intercept('POST', 'https://accounts-api.eduzz.com/authenticate').as('authRequest');
     cy.visit('/')
-    cy.LoginInvalido()
-    cy.wait(1500)
-    
-    cy.get('#alert-message')
-      .should('contain.text', 'E-mail ou senha inválidos')
-  })
+    cy.Login('emailerrado@gmail.com', 'senha1nv4lid4');
+    cy.wait('@authRequest').its('response.statusCode').should('eq', 401)
+     
+    cy.get('.MuiAlert-message')
+      .should('contain.text', 'Não encontramos um cadastro com este endereço de e-mail')
+});
 
 });

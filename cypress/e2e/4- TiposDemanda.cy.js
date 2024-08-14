@@ -3,7 +3,7 @@ import{data} from '../support/index'
 describe('Tipos de Demandas', () => {
   beforeEach(() => {
     cy.visit('/')
-    cy.Login()
+    cy.Login(Cypress.env('USER_EMAIL'), Cypress.env('USER_PASSWORD'))
    })
 
   it('Cadastrar Tipo de Demanda', () => {

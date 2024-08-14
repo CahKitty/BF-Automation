@@ -3,7 +3,7 @@ import{data} from '../support/index'
 describe('Jornadas', () => {
   beforeEach(() => {
     cy.visit('/')
-    cy.Login()
+    cy.Login(Cypress.env('USER_EMAIL'), Cypress.env('USER_PASSWORD'))
    })
   it('Sucesso ao Cadastrar Jornadas', () => {
     cy.contains('Jornadas').click()
